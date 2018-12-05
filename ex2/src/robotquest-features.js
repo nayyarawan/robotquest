@@ -19,12 +19,52 @@ const trailIndicators = {
 
 
 function turn(robot, step, turns) {
-    turns += 1;
+    // To turn robot head according given value
+    switch (robot.head) {
+        case('up'):
+            robot.head = step == "turn-right" ? "right" : "left";
+            turns += 1;
+            break;
+        case("down"):
+            robot.head = step == "turn-right" ? "left" : "right";
+            turns += 1;
+            break;
+        case("right"):
+            robot.head = step == "turn-right" ? "down" : "up";
+            turns += 1;
+            break;
+        case("left"):
+            robot.head = step == "turn-right" ? "up" : "down";
+            turns += 1;
+            break;
+    }
+    console.log("Robot head = " + robot.head);
+    console.log(turns);
     return turns;
+
 }
 
 function move(robot, maxLineIndex, maxColumnIndex, nbOfMoves) {
-    nbOfMoves += 1;
+    switch(robot.head){
+        case("up"):
+            robot.position.line++;
+            nbOfMoves++;
+            break;
+        case("down"):
+            robot.position.line--;
+            nbOfMoves++;
+            break;
+        case("right"):
+            robot.position.column++;
+            nbOfMoves++;
+            break;
+        case("left"):
+            robot.position.column--;
+            nbOfMoves++;
+            break;
+
+    }
+    console.log("Robot is on line "+ robot.position.line + " And on column "+ robot.position.column );
     return nbOfMoves;
 }
 

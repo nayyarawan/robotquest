@@ -1,5 +1,7 @@
 'use strict';
 let features = require('./robotquest-features');
+var prompt = require("prompt-sync")();
+
 
 // This code is inspired from https://github.com/HackYourFuture/RobotApp
 
@@ -15,8 +17,8 @@ const PLAY_BOARD = [
     [R,   '.',  '.',   W]
 ];
 
-const STEPS_TO_FLAG = ['move', 'turn-right', 'move', 'move', 'move', 'turn-left', 'move', 'move'];
-
+//const STEPS_TO_FLAG = [ 'move', 'move', 'move', 'move', 'move', 'move'];
+//const STEPS_TO_FLAG = ["turn-right", 'move',"turn-left","move","turn-right", 'move', 'move', "move" ];
 
 let ROBOT_START_STATE = {
     position: {
@@ -37,19 +39,50 @@ function main() {
 
     let currentRobot = features.cloneRobot(ROBOT_START_STATE);
     let isFlagReached = false;
+    let isWaterReached = false;
+    let isTreeReached = false;
     renderBoard(board, isFlagReached);
 
-    for (let index in STEPS_TO_FLAG) {
-        let step = STEPS_TO_FLAG[index];
-        let previousRobotState = features.cloneRobot(currentRobot);
+    while(!isFlagReached){
 
-        let hasMoved = applyStep(currentRobot, step, maxLineIndex, maxColumnIndex);
-        isFlagReached = features.checkIfFlagReached(currentRobot, board);
-        features.updateBoard(board, previousRobotState, currentRobot);
+            let val = prompt();
 
-        if (hasMoved) {
-            renderBoard(board, isFlagReached);
-        }
+
+            let step = val;
+            let previousRobotState = features.cloneRobot(currentRobot);
+
+            let hasMoved = applyStep(currentRobot, step, maxLineIndex, maxColumnIndex);
+            isFlagReached = features.checkIfFlagReached(currentRobot, board);
+            isWaterReached = features.checkIfWaterReached(currentRobot, board);
+            isTreeReached = features.checkIfTreeReached(currentRobot, board);
+            features.updateBoard(board, previousRobotState, currentRobot);
+
+            if(hasMoved) {
+                if (currentRobot.position.line <= maxLineIndex && currentRobot.position.column <= maxColumnIndex)
+                {
+                    renderBoard(board, isFlagReached);
+                }
+                else {
+                    console.log("out of limit");
+                    break;
+                }
+            }
+
+            if (isWaterReached) {
+
+                console.log("oops Game Over ! You reach to Water");
+                break;
+            }
+            if (isTreeReached) {
+                console.log("passe på ");
+
+                break;
+
+            }
+
+
+
+
     }
 }
 
