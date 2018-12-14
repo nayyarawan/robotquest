@@ -39,13 +39,13 @@ function turn(robot, step, turns) {
     return turns;
 }
 
-function move(robot, maxLineIndex, maxColumnIndex, nbOfMoves) {
+function  move(robot, maxLineIndex, maxColumnIndex, nbOfMoves) {
     let line = robot.position.line;
     let column = robot.position.column;
 
     switch (robot.head) {
         case 'up':
-            line = Math.min(maxLineIndex, line + 1);
+            line = Math.min(maxLineIndex, line +1);
             break;
         case 'down':
             line = Math.max(0, line - 1);
@@ -57,11 +57,12 @@ function move(robot, maxLineIndex, maxColumnIndex, nbOfMoves) {
             column = Math.min(maxColumnIndex, column + 1);
             break;
     }
-
+if(line != robot.position.line) {
     robot.position.line = line;
     robot.position.column = column;
 
     nbOfMoves += 1;
+}
     return nbOfMoves;
 }
 
@@ -72,7 +73,7 @@ function updateBoard(board, previousRobotState, currentRobotState) {
     let currentColumn = currentRobotState.position.column;
 
     board[previousLine][previousColumn] = trailIndicators[previousRobotState.head];
-    board[currentLine][currentColumn] = SYMBOLS.robot;
+    board[currentLine][currentColumn] = trailIndicators[currentRobotState.head];
 }
 
 function checkIfFlagReached(robot, board) {
