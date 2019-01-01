@@ -33,7 +33,7 @@ This will open the code as an independent project. Go through the code.
 ### Start the webserver
 Start from the `/home/vagrant/Code/robotquest/ex5` and type these commands: 
  - `npm install`. This command tells _npm_ to install all the necessary packages, as specified in the `package.json` file. The packages files are downloaded to the `node_modules` directory. 
- - `http-server`: starts a simple http server så you can open the application in a web-browser at this URL: http://127.0.0.1:8080 or http://localhost:8080  
+ - `http-server`: starts a simple http server that will let you open the application in a web-browser at this URL: http://127.0.0.1:8080 or http://localhost:8080  
  - **OBS** the command `npm test` does not start the tests properly ... wil fix (**TODO**)
 
 
@@ -42,9 +42,9 @@ The purpose of `ex5` is to get used to work on the javascript, html and css file
 
 There is no graphics. The items are still represented by their letters and the robot is figured by a letter **R** besides an arrow indicating its direction. Both symbols are text. 
 
-![The toolbar and board at start](https://raw.githubusercontent.com/WeIgniteTech/robotquest/master/ex4/readme-img/board_1.png)
+![The toolbar and board at start](https://raw.githubusercontent.com/WeIgniteTech/robotquest/master/ex5/readme-img/board_1.png)
 
-![After the 'TURN-RIGHT' button is clicked](https://raw.githubusercontent.com/WeIgniteTech/robotquest/master/ex4/readme-img/board_2.png)
+![After the 'TURN-RIGHT' button is clicked](https://raw.githubusercontent.com/WeIgniteTech/robotquest/master/ex5/readme-img/board_2.png)
 
-![After the 'MOVE' button is clicked](https://raw.githubusercontent.com/WeIgniteTech/robotquest/master/ex4/readme-img/board_3.png)
+![After the 'MOVE' button is clicked](https://raw.githubusercontent.com/WeIgniteTech/robotquest/master/ex5/readme-img/board_3.png)
 
