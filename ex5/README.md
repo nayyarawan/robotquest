@@ -42,9 +42,18 @@ The purpose of `ex5` is to get used to work on the javascript, html and css file
 
 There is no graphics. The items are still represented by their letters and the robot is figured by a letter **R** besides an arrow indicating its direction. Both symbols are text. 
 
+
+#### The toolbar and board at game start
+
 ![The toolbar and board at start](https://raw.githubusercontent.com/WeIgniteTech/robotquest/master/ex5/readme-img/board_1.png)
 
+
+#### After the TURN-RIGHT button is clicked
+
 ![After the 'TURN-RIGHT' button is clicked](https://raw.githubusercontent.com/WeIgniteTech/robotquest/master/ex5/readme-img/board_2.png)
+
+
+#### After the MOVE button is clicked
 
 ![After the 'MOVE' button is clicked](https://raw.githubusercontent.com/WeIgniteTech/robotquest/master/ex5/readme-img/board_3.png)
 
