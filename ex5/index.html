@@ -14,15 +14,18 @@
 <body>
   <div id="root">
       <div id="toolbar" class="toolbar">
-          <button id="turn-left-button">TURN-LEFT</button>
-          <button id="turn-right-button">TURN-RIGHT</button>
-          <button id="move-button">MOVE</button>
+          <button id="turn-left-button" class="top-button">TURN-LEFT</button>
+          <button id="turn-right-button" class="top-button">TURN-RIGHT</button>
+          <button id="move-button" class="top-button">MOVE</button>
       </div>
-        <p>here gonna be output</p>
+      <p class="output">
+        <label id="output1" class="output">Moves : 0</label>
+        <label id="output2" class="output">Turns : 0</label>
+      </p>
       <div id="board" class="board">
           <!-- Here will be loaded a table at runtime -->
           <div>
-              <table border="l">
+              <table id="board-inner" border="l">
                   <tr>
                       <td id="l3c0"> T </td>
                       <td id="l3c1"> T </td>
@@ -48,7 +51,9 @@
                       <td id="l0c3"> W </td>
                   </tr>
               </table>
+              <p id="result" class="result">Result</p>
           </div>
+          <button id="restart-game" class="restart-btn">Restart</button>
       </div>
 
   </div>
